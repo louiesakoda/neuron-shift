@@ -1,5 +1,7 @@
 # Neuron Field Notes
 
+**Independent concept prototype. Not built for, affiliated with, or endorsed by any company. All data is simulated.** Try it at [neuron-shift.vercel.app](https://neuron-shift.vercel.app), or read the [case study](https://neuron-shift.vercel.app/case-study).
+
 An exploratory React Flow prototype with two connected ideas: a shift handoff that transfers the previous operator's decisions and reasoning, and a learning layer that teaches the power path while an operator investigates a signal.
 
 ## The product idea
@@ -37,20 +39,20 @@ Most visitors open the prototype from a portfolio with nobody presenting it. On 
 
 On a screen narrower than 1000 pixels the console does not fit, so the app shows a short phone page instead: the idea, what the colors mean, a link to the case study, and a prompt to open the link on a laptop.
 
-## Two-minute interview walkthrough
+## Two-minute walkthrough
 
-The Shift Brief opens on load. Present it first. The graph behind it is unpowered. It powers up from the utility feed down to the racks when you take the shift.
+The Shift Brief opens on load. Start there. The graph behind it is unpowered. It powers up from the utility feed down to the racks when you take the shift.
 
 1. **Read the handoff.** "Sarah Chen handed Louie the site at 19:00." Two items need attention, one is listed so the incoming operator knows it was investigated. Every collapsed row already shows its "what you need to do" line.
 2. **Expand item 01 and read it slowly.** The six rows are the product: what changed, what we know, what was decided, why, who decided, what you need to do. The last row is an instruction with a threshold the previous operator chose.
 3. **Point at "What changed since 19:02."** New, Changed, Resolved, No change. A diff for a building. The confidence line, 0.71 to 0.82, ties to the AI hypothesis shown next.
 4. **Click "Open on graph" on item 01.** The brief closes, the graph pans and zooms onto UPS-A1 and its neighbors with a short pulse, the affected path traces in amber, and the asset panel opens on the **Evidence** tab with Sarah's decision shown above the AI hypothesis. Nodes that carry a handoff decision show a small clipboard marker.
-5. **Stop and look at the canvas before touching anything.** Two assets are outlined in red, pulsing slowly, each with a "Needs your decision" label on the card, and the toolbar reads "2 need your decision". Say what the colors mean: amber is a condition the equipment has, red is a decision a human owes. Rack R-42 is the proof. It sits at 92% of its power budget so it stays amber, because nobody owes a decision on it. The canvas shows where your judgment is outstanding, not just where the plant is unhappy.
+5. **Stop and look at the canvas before touching anything.** Two assets are outlined in red, pulsing slowly, each with a "Needs your decision" label on the card, and the toolbar reads "2 need your decision". The colors carry the meaning: amber is a condition the equipment has, red is a decision a human owes. Rack R-42 is the proof. It sits at 92% of its power budget so it stays amber, because nobody owes a decision on it. The canvas shows where your judgment is outstanding, not just where the plant is unhappy.
 6. **Open the Ask tab.** Neuron has already answered the questions for this asset, so there is no prompt to compose. Each answer cites assets by name.
 7. **Open the Impact tab on UPS-A1.** Opening the tab draws the failure preview on the graph. Nothing loses power and three assets are held by redundancy. Now select PDU-05 and look again: two racks lose power and nothing covers them. The graph goes dark where power would be lost: the flow stops, the lines turn to gray dashes, and the racks' readings are struck through. That contrast is the point.
 8. **Open the recommendation on UPS-A1 and choose Approve.** Four pre-flight steps must be acknowledged and the asset name typed before the button unlocks. Compare with Switchgear SWGR-A, where a reversible threshold change is a single click. Record the decision and three things happen at once: the red clears to a quiet green "Decided by you" and the toolbar count drops, the decision pins to the canvas beside its asset, and it appears in the shift brief under "Decisions you are handing on." Drag the pinned card anywhere; it stays with its asset and survives a reload. The broom control under the zoom buttons clears pins and decisions between runs.
 9. **Drag a node, then reset.** The circular-arrow **Reset layout** control under the zoom buttons restores the layout. The graph is a live layout, not a picture.
-10. **Turn on the Learning layer** in the toolbar. A violet section appends below the operator panel with definitions, a glossary for the acronyms on screen, and an optional self-test. The line to say: I am not the user, so my scaffolding switches off.
+10. **Turn on the Learning layer** in the toolbar. A violet section appends below the operator panel with definitions, a glossary for the acronyms on screen, and an optional self-test. The principle: I am not the user, so my scaffolding switches off.
 11. **Click "Shift brief" in the top bar.** The handoff is available for the whole shift, not only at the start.
 12. Click the ⓘ next to "Investigation" to show how simulated values and assumptions are labeled.
 
@@ -58,9 +60,9 @@ Decide both recommendations and every red outline on the canvas is gone by the e
 
 One sentence that ties both halves together: the graph teaches a new operator the system, and the brief transfers the previous operator's judgment.
 
-## How to frame it
+## Why I built it
 
-> I did not want to pretend I already knew data-center operations. I wanted to show how I learn a technical domain, turn uncertainty into explicit assumptions, and build something an expert can correct. I used Neuron's visual language as a starting point and explored how its digital twin could also help onboard operators and cross-functional teammates.
+I did not want to pretend I already knew data-center operations. I wanted to show how I learn a technical domain, turn uncertainty into explicit assumptions, and build something an expert can correct. I used Neuron's visual language as a starting point and explored how its digital twin could also help onboard operators and cross-functional teammates.
 
 ## Scope
 
